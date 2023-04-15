@@ -29,10 +29,10 @@ router.get(
   "/login",
   passport.authenticate("google", {
     successRedirect: process.env.FRONTEND_URL,
-  }),
-  (req, res, next) => {
-    res.send("logged in");
-  }
+  })
+  // (req, res, next) => {
+  //   res.send("logged in");
+  // }
 );
 
 router.get("/me", isAuthenticated, myProfile);
